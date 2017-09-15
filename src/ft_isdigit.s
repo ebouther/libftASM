@@ -1,27 +1,20 @@
 section .text
-	global _ft_isalpha
+	global _ft_isdigit
 
-_ft_isalpha:
+_ft_isdigit:
 	push	rbp
 	mov		rbp, rsp
 	sub		rsp, 16
 
-	cmp		rdi, 'A'
-	jge		is_maj
-
+	cmp		rdi, '0'
+	jge		digit
 	jmp		bad
 
-is_maj:
-	cmp		rdi, 'Z'
-	jle		ok
-	cmp		rdi, 'a'
-	jge		is_min
-	jmp		bad
-	
-is_min:
-	cmp		rdi, 'z'
+digit:
+	cmp		rdi, '9'
 	jle		ok
 	jmp		bad
+
 
 bad:
 	mov		rax, 0
