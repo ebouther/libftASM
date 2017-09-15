@@ -13,5 +13,8 @@ int main(int ac, char **av)
 	ret = ft_isdigit(av[1][0]);
 	printf("IS_DIGIT : [%d]\n", ret);
 
+	ret = ft_isalnum(av[1][0]);
+	printf("IS_ALNUM : [%d]\n", ret);
+
 	return (0);
 }
