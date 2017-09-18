@@ -17,7 +17,7 @@ is_maj:
 	cmp		rdi, 'a'
 	jge		is_min
 	jmp		bad
-	
+
 is_min:
 	cmp		rdi, 'z'
 	jle		ok

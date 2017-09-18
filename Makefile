@@ -6,13 +6,13 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/09/15 16:56:59 by ebouther         ###   ########.fr        #
+#    Updated: 2017/09/18 17:29:36 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftasm.a
 AS = nasm 
-ASFLAGS = -f macho64 
+ASFLAGS = -f macho64 -g
 LDFLAGS = 
 
 SRC_DIR = src/
