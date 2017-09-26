@@ -2,10 +2,6 @@ section .text
 	global _ft_isalpha
 
 _ft_isalpha:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 16
-
 	cmp		rdi, 'A'
 	jge		is_maj
 
@@ -25,12 +21,8 @@ is_min:
 
 bad:
 	mov		rax, 0
-	mov		rsp, rbp
-	pop		rbp	
 	ret
 
 ok:
 	mov		rax, 1 
-	mov		rsp, rbp
-	pop		rbp	
 	ret

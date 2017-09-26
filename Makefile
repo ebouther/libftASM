@@ -6,21 +6,23 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/09/18 17:29:36 by ebouther         ###   ########.fr        #
+#    Updated: 2017/09/26 20:20:52 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftasm.a
+NAME = libfts.a
 AS = nasm 
 ASFLAGS = -f macho64 -g
 LDFLAGS = 
 
+TEST_DIR = test/
 SRC_DIR = src/
 OBJ_DIR = obj/
 
 SRC_FILES = ft_isalpha.s \
 			ft_isdigit.s \
-			ft_isalnum.s
+			ft_isalnum.s \
+			ft_isascii.s
 
 OBJ_FILES = $(SRC_FILES:.s=.o)
 
@@ -47,5 +49,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+check:
+	make -C $(TEST_DIR) check
 
 .PHONY: all clean fclean re
