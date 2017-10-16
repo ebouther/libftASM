@@ -10,9 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
+UNAME := $(shell uname)
+
 NAME = libftasm.a
 AS = nasm 
-ASFLAGS = -f macho64 -g
+
+ifeq ($(UNAME), Linux)
+    ASFLAGS = -f elf64 -g
+else
+    ASFLAGS = -f macho64 -g
+endif
+
+
 LDFLAGS = 
 
 SRC_DIR = src/
