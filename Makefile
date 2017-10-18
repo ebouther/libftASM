@@ -25,7 +25,10 @@ OBJ_DIR = obj/
 SRC_FILES = ft_isalpha.s \
 			ft_isdigit.s \
 			ft_isalnum.s \
-			ft_isascii.s
+			ft_isascii.s \
+			ft_isprint.s \
+			ft_strlen.s \
+			ft_strcmp.s
 
 OBJ_FILES = $(SRC_FILES:.s=.o)
 

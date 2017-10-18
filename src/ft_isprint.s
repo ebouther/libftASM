@@ -2,16 +2,14 @@ section .text
 	global _ft_isprint
 
 _ft_isprint:
-	cmp		rdi, 0x40
+	cmp		rdi, 40o
 	jge		printable
 	jmp		bad
 
 printable:
-	cmp		rdi, 0x176 
+	cmp		rdi, 176o 
 	jle		ok
 	jmp		bad
-	call	_ft_isalpha	
-	mov		rdx, rax
 
 bad:
 	mov		rax, 0
