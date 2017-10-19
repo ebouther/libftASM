@@ -1,13 +1,13 @@
 section .text
-	global	ft_strlen
+	global	_ft_strlen
 
-ft_strlen:
+_ft_strlen:
 		
-	mov	rcx, 0
+	mov	rcx, -1
 
 	loop:
-
 	inc	rcx
+
 	cmp byte[rdi + rcx], 0
 	jne	loop
 
