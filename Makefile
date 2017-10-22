@@ -1,4 +1,10 @@
-# **************************************************************************** ##                                                                              # #                                                         :::      ::::::::    # #    Makefile                                           :+:      :+:    :+:    # #                                                     +:+ +:+         +:+      # #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         # #                                                 +#+#+#+#+#+   +#+            #
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
 #    Updated: 2017/09/26 20:20:52 by ebouther         ###   ########.fr        #
 #                                                                              #
@@ -28,7 +34,10 @@ SRC_FILES = ft_isalpha.s \
 			ft_isascii.s \
 			ft_isprint.s \
 			ft_strlen.s \
-			ft_strcmp.s
+			ft_toupper.s
+# bzero
+# strcat
+# tolower
 
 OBJ_FILES = $(SRC_FILES:.s=.o)
 
