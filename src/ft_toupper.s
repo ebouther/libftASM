@@ -8,8 +8,8 @@ _ft_toupper:
 
 is_min:
 	cmp rdi, 'z'
-	jle	ret_maj	
-	add rdi, 32 
+	jg	return	
+	sub rdi, 32 
 
 return:
 	mov	rax, rdi
