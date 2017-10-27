@@ -18,8 +18,6 @@ int main(int ac, char **av)
 		//ret = ft_isalnum(av[1][0]);
 		//printf("IS_ALNUM : [%d]\n", ret);
 	}	
-	
-	ft_puts("test12345098089");
-
-	return (0);
+	ft_puts(av[1]);
+	return (puts(av[1]));
 }
