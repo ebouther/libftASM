@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/30 14:31:08 by ebouther         ###   ########.fr        #
+#    Updated: 2017/10/30 15:37:21 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ SRC_FILES = ft_bzero.s \
 			ft_strlen.s \
 			ft_toupper.s \
 			ft_tolower.s \
-			ft_puts.s
+			ft_puts.s \
+			ft_strlen.s
 # bzero
 # strcat
 # tolower
