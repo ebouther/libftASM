@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/23 15:36:10 by ebouther         ###   ########.fr        #
+#    Updated: 2017/10/30 14:31:08 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ TEST_DIR = test/
 SRC_DIR = src/
 OBJ_DIR = obj/
 
-SRC_FILES = ft_isalpha.s \
+SRC_FILES = ft_bzero.s \
+			ft_isalpha.s \
 			ft_isdigit.s \
 			ft_isalnum.s \
 			ft_isascii.s \

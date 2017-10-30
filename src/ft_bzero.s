@@ -2,13 +2,20 @@ section .text
 	global _ft_bzero
 
 _ft_bzero:
-	push	rbp
-	mov		rbp, rsp
-	sub		rsp, 20 
-	mov		rax, rdi
-	;mov		rax, rsi
+	cmp rdi, 0x0
+	je end
+	cmp rsi, 0x0
+	je end
 
-	mov rsp, rbp
-	pop rbp
-	pop	rbx
-	jmp rbx
+	mov	rcx, 0 
+
+loop:
+
+	mov	byte[rdi + rcx], 0x0
+
+	inc	rcx
+	cmp rcx, rsi
+	jl	loop
+
+end:
+	ret
