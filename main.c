@@ -35,6 +35,12 @@ int main(int ac, char **av)
 		for (int i = 0; i < 10; i++)
 			printf("[%c]", *(str + i));
 		printf("\n");
+
+		char *str2 = NULL;
+		asprintf(&str2, "%s", "POPOOPOPOP");
+		ft_memcpy(str, str2, 3);
+
+		printf("STRDUP(str2) : %s\n", ft_strdup(str2));
 	}
 
 

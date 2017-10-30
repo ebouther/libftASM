@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/30 15:57:53 by ebouther         ###   ########.fr        #
+#    Updated: 2017/10/30 17:28:54 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,9 @@ SRC_FILES = ft_bzero.s \
 			ft_tolower.s \
 			ft_puts.s \
 			ft_strlen.s \
-			ft_memset.s
+			ft_memset.s \
+			ft_memcpy.s \
+			ft_strdup.s
 # bzero
 # strcat
 # tolower
