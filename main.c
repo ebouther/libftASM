@@ -18,7 +18,8 @@ int main(int ac, char **av)
 
 		//ret = ft_isalnum(av[1][0]);
 		//printf("IS_ALNUM : [%d]\n", ret);
-	}	
+	}
+
 	ft_puts(av[1]);
 
 	{
@@ -28,6 +29,12 @@ int main(int ac, char **av)
 		ft_bzero(str, 5);
 		for (int i = 0; i < 10; i++)
 			printf("[%c]", *(str + i));
+		printf("\n");
+
+		ft_memset(str, '0', 9);
+		for (int i = 0; i < 10; i++)
+			printf("[%c]", *(str + i));
+		printf("\n");
 	}
 
 

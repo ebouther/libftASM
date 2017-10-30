@@ -1,16 +1,17 @@
 section .text
-	global	ft_memset
+	global _ft_memset
 
-ft_memset:
-	mov	rcx, 0
+_ft_memset:
+	push rdi
 
-	loop:
+	mov		rax, rsi
 
-	mov	[rdi + rcx], rsi 
+	mov		rcx, rdx
+	rep	stosb	;dec rcx stop when rcx = 0
 
-	inc	rcx
-	cmp rcx, rdx
-	jl	loop
-	
-	mov rax, rdi
+	; ecx = -strlen - 2
+	not		rcx ; rcx = strlen + 1
+	dec		rcx ; rcx = strlen
+
+	pop rax
 	ret
