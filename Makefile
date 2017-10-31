@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/30 17:28:54 by ebouther         ###   ########.fr        #
+#    Updated: 2017/10/30 18:50:41 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 
 SRC_FILES = ft_bzero.s \
+			ft_strcat.s \
 			ft_isalpha.s \
 			ft_isdigit.s \
 			ft_isalnum.s \
@@ -42,9 +43,6 @@ SRC_FILES = ft_bzero.s \
 			ft_memset.s \
 			ft_memcpy.s \
 			ft_strdup.s
-# bzero
-# strcat
-# tolower
 
 OBJ_FILES = $(SRC_FILES:.s=.o)
 

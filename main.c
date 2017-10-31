@@ -39,8 +39,15 @@ int main(int ac, char **av)
 		char *str2 = NULL;
 		asprintf(&str2, "%s", "POPOOPOPOP");
 		ft_memcpy(str, str2, 3);
-
 		printf("STRDUP(str2) : %s\n", ft_strdup(str2));
+
+		char *s3 = malloc(ft_strlen(str) + ft_strlen(str2) + 1);
+		s3[0] = 'a';
+		s3[1] = 'b';
+		s3[2] = 'c';
+		s3[3] = '\0';
+
+		printf("STRCAT(str, str2) : %s\n", ft_strcat(s3, s3));
 	}
 
 
