@@ -19,6 +19,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 char	*ft_strdup(const char *s1);
 
+void	ft_cat(int fd);
 //int 	ft_strcmp(const char *s1, const char *s2);
 
 #endif

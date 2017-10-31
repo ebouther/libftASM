@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <fcntl.h>
 
 int main(int ac, char **av)
 {
@@ -49,6 +50,11 @@ int main(int ac, char **av)
 
 		printf("STRCAT(str, str2) : %s\n", ft_strcat(s3, s3));
 	}
+
+	int fd = open("./test1", O_RDONLY);
+	printf("FD : %d\n", fd);
+	ft_cat(fd);
+	close(fd);
 
 
 
