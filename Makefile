@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/30 18:50:41 by ebouther         ###   ########.fr        #
+#    Updated: 2017/10/31 15:52:18 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,14 @@ SRC_FILES = ft_bzero.s \
 			ft_isalnum.s \
 			ft_isascii.s \
 			ft_isprint.s \
-			ft_strlen.s \
 			ft_toupper.s \
 			ft_tolower.s \
 			ft_puts.s \
 			ft_strlen.s \
 			ft_memset.s \
 			ft_memcpy.s \
-			ft_strdup.s
+			ft_strdup.s \
+			ft_cat.s
 
 OBJ_FILES = $(SRC_FILES:.s=.o)
 
