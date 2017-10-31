@@ -18,12 +18,12 @@ _ft_cat:
 	;sub		rsp, 4096
 	;mov		[rsp], byte 'A' ; DBG
 
-	mov		r11, rdi
+	mov		r12, rdi
 
 loop:
 
 	mov		rax, MACH_SYSCALL(SYS_READ)
-	mov		rdi, r11 ;fd 
+	mov		rdi, r12 ;fd 
 	mov		rsi, buf ;rsp
 	mov		rdx, 4096
 	syscall
@@ -31,7 +31,6 @@ loop:
 
 	cmp		rax, 0
 	jle		exit
-
 
 	mov		rdx, rax	; len
 	mov		rax, MACH_SYSCALL(SYS_WRITE)
