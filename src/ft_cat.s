@@ -13,11 +13,7 @@ section .text
 _ft_cat:
 
 	push	rbp
-	mov		rbp, rsp	
-
-	;sub		rsp, 4096
-	;mov		[rsp], byte 'A' ; DBG
-
+	mov		rbp, rsp
 	mov		r12, rdi
 
 loop:

@@ -16,7 +16,7 @@ section .text
 
 _ft_puts:
 	cmp rdi, 0x0
-	je	err
+	je null_case	
 
 	;--------- WRITE STR --------;
 	call _ft_strlen
@@ -26,6 +26,7 @@ _ft_puts:
 	mov	rdi, STDOUT
 	mov rax, MACH_SYSCALL(SYS_WRITE)
 	syscall
+	jc	err
 
 	;--------- WRITE \n --------;
 	push 0x0A 
@@ -34,12 +35,13 @@ _ft_puts:
 	mov		rdx, 1 
 	mov		rax, MACH_SYSCALL(SYS_WRITE) 
 	syscall
+	jc	err
 	add rsp, 8 ; remove \n from stack
 
 	mov rax, 10
 	ret	
 
-err:
+null_case:
 	;--------- WRITE (null) --------;
 	mov		rdi, STDOUT	
 	mov		rsi, null.str 
@@ -48,4 +50,8 @@ err:
 	syscall
 
 	mov rax, 10 
+	ret
+
+err:
+	mov rax, -1 
 	ret
