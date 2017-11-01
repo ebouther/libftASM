@@ -20,6 +20,9 @@ int main(int ac, char **av)
 
 		ret = ft_isalnum(av[1][0]);
 		printf("IS_ALNUM(%c) : [%d]\n", av[1][0], ret);
+
+		ret = ft_isascii(av[1][0]);
+		printf("IS_ASCII(%c) : [%d]\n", av[1][0], ret);
 	}
 
 	// =============  FT_PUTS  =============
@@ -28,11 +31,10 @@ int main(int ac, char **av)
 
 	{
 		char *str = NULL;
-		asprintf(&str, "%s", "ABCDEFGHIJ");
-
 		char *str2 = NULL;
-		asprintf(&str2, "%s", "ZYXWVUTSR");
 
+		asprintf(&str, "%s", "ABCDEFGHIJ");
+		asprintf(&str2, "%s", "ZYXWVUTSR");
 
 		// =============  FT_BZERO =============
 		printf("\nBZERO(%s, 5):\n", str);
@@ -48,7 +50,7 @@ int main(int ac, char **av)
 			printf("[%c]", *(str + i));
 		printf("\n");
 
-		// =============  FT_MEMSET =============
+		// =============  FT_MEMCPY =============
 		printf("\nMEMCPY(%s, %s, 3) :\n", str, str2);
 		printf("%s\n", ft_memcpy(str, str2, 3));
 
@@ -63,15 +65,26 @@ int main(int ac, char **av)
 		// =============  FT_STRCAT =============
 		printf("\nSTRCAT(%s, %s) :\n", str3, str2);
 		printf("%s\n", ft_strcat(str3, str2));
-
 	}
 
 	// =============  FT_CAT =============
-	int fd = open("./test1", O_RDONLY);
-	printf("FD : %d\n", fd);
+	int fd = open("./auteur", O_RDONLY);
+	printf("\nFT_CAT(%d)\n", fd);
 	ft_cat(fd);
 	close(fd);
 
+
+	printf("\n=======  BONUS :  =======\n");
+	//============== TEA_ENCRYPT ==========
+	
+	uint32_t	msg[2] = {42, 31};
+	uint32_t	key[4] = {23423, 32131, 81723, 1231};
+	printf("\nMSG : [%d] [%d]\n", msg[0], msg[1]);
+	tea_encrypt(msg, key);
+	printf("\nENCRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
+	tea_decrypt(msg, key);
+	printf("\nDECRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
+	
 
 	return (0);
 }
