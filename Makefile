@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/10/31 15:52:18 by ebouther         ###   ########.fr        #
+#    Updated: 2017/11/01 16:06:51 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ NAME = libfts.a
 AS = nasm 
 
 ifeq ($(UNAME), Linux)
-    ASFLAGS = -f elf64 -g
+    ASFLAGS = -f elf64
 else
-    ASFLAGS = -f macho64 -g
+    ASFLAGS = -f macho64
 endif
 
 
@@ -27,6 +27,7 @@ LDFLAGS =
 TEST_DIR = test/
 SRC_DIR = src/
 OBJ_DIR = obj/
+INC_DIR = inc/
 
 SRC_FILES = ft_bzero.s \
 			ft_strcat.s \
@@ -70,7 +71,10 @@ fclean: clean
 
 re: fclean all
 
-check:
+check: $(NAME)
 	make -C $(TEST_DIR) check
+
+test: main.c $(NAME)
+	gcc	-I $(INC_DIR) $(NAME) main.c && ./a.out
 
 .PHONY: all clean fclean re
