@@ -68,23 +68,40 @@ int main(int ac, char **av)
 	}
 
 	// =============  FT_CAT =============
-	int fd = open("./auteur", O_RDONLY);
-	printf("\nFT_CAT(%d)\n", fd);
-	ft_cat(fd);
-	close(fd);
+	{
+		int fd = open("./auteur", O_RDONLY);
+		printf("\nFT_CAT(%d)\n", fd);
+		ft_cat(fd);
+		close(fd);
+	}
 
 
 	printf("\n=======  BONUS :  =======\n");
-	//============== TEA_ENCRYPT ==========
+	//======= TEA_ENCRYPT / DECRYPT ==========
 	
-	uint32_t	msg[2] = {42, 31};
-	uint32_t	key[4] = {23423, 32131, 81723, 1231};
-	printf("\nMSG : [%d] [%d]\n", msg[0], msg[1]);
-	tea_encrypt(msg, key);
-	printf("\nENCRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
-	tea_decrypt(msg, key);
-	printf("\nDECRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
-	
+	{
+		uint32_t	msg[2] = {42, 31};
+		uint32_t	key[4] = {23423, 32131, 81723, 1231};
+		printf("\nMSG : [%d] [%d]\n", msg[0], msg[1]);
+		tea_encrypt(msg, key);
+		printf("\nENCRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
+		tea_decrypt(msg, key);
+		printf("\nDECRYPTED MSG : [%d] [%d]\n", msg[0], msg[1]);
+	}
+
+	//============ FT_PUTSTR ================
+	printf("\nFT_PUTSTR(\"toto\"):\n");
+	ft_putstr("toto");
+	printf("\nFT_PUTSTR(NULL):\n");
+	ft_putstr(NULL);
+
+	//========== FT_PUTSTR_FD ================
+	printf("\nFT_PUTSTR_FD(\"ERR\", 2):\n");
+	ft_putstr_fd("ERR", 2);
+
+	//========== FT_PUTCHAR ================
+	printf("\nFT_PUTCHAR(42):\n");
+	ft_putchar(42);
 
 	return (0);
 }
