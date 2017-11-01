@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/11/01 17:29:35 by ebouther         ###   ########.fr        #
+#    Updated: 2017/11/01 18:09:34 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,9 @@ SRC_FILES =   ft_bzero.s   	\
 			tea_decrypt.s 	\
 			 ft_putstr.s 	\
 			ft_putstr_fd.s  \
-			ft_putchar.s
+			ft_putchar.s    \
+			ft_islower.s 	\
+			ft_isupper.s
  
 OBJ_FILES = $(SRC_FILES:.s=.o)
 

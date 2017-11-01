@@ -23,6 +23,12 @@ int main(int ac, char **av)
 
 		ret = ft_isascii(av[1][0]);
 		printf("IS_ASCII(%c) : [%d]\n", av[1][0], ret);
+
+		ret = ft_islower(av[1][0]);
+		printf("IS_LOWER(%c) : [%d]\n", av[1][0], ret);
+
+		ret = ft_isupper(av[1][0]);
+		printf("IS_UPPER(%c) : [%d]\n", av[1][0], ret);
 	}
 
 	// =============  FT_PUTS  =============
