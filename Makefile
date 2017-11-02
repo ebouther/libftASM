@@ -6,7 +6,7 @@
 #    By: ebouther <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/15 15:20:41 by ebouther          #+#    #+#              #
-#    Updated: 2017/11/01 18:09:34 by ebouther         ###   ########.fr        #
+#    Updated: 2017/11/02 15:57:32 by ebouther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,6 @@ else
 endif
 
 
-LDFLAGS = 
-
-TEST_DIR = test/
 SRC_DIR = src/
 OBJ_DIR = obj/
 INC_DIR = inc/
@@ -75,13 +72,11 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f ./test 
 
 re: fclean all
 
-check: $(NAME)
-	make -C $(TEST_DIR) check
-
 test: test.c $(NAME)
-	gcc	-I $(INC_DIR) $(NAME) test.c && ./a.out
+	gcc	$(NAME) -I $(INC_DIR) test.c -o test && ./test
 
 .PHONY: all clean fclean re

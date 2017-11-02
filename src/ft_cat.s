@@ -20,7 +20,7 @@ loop:
 
 	mov		rax, MACH_SYSCALL(SYS_READ)
 	mov		rdi, r12 ;fd 
-	mov		rsi, buf ;rsp
+	lea		rsi, [rel buf] ;rsp
 	mov		rdx, 4096
 	syscall
 	jc		exit
@@ -31,7 +31,7 @@ loop:
 	mov		rdx, rax	; len
 	mov		rax, MACH_SYSCALL(SYS_WRITE)
 	mov		rdi, STDOUT 
-	mov		rsi, buf	;rsp 
+	lea		rsi, [rel buf]	;rsp 
 	syscall
 
 	jmp		loop

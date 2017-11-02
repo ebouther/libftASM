@@ -6,6 +6,7 @@
 %define STDOUT 1
 
 section .data
+lf:		db	0x0A
 null:
 	.str: db	"(null)", 0x0A
 	.len: equ	$ - null.str
@@ -29,14 +30,12 @@ _ft_puts:
 	jc	err
 
 	;--------- WRITE \n --------;
-	push 0x0A 
 	mov		rdi, STDOUT		
-	mov		rsi, rsp 
+	lea		rsi, [rel lf]
 	mov		rdx, 1 
 	mov		rax, MACH_SYSCALL(SYS_WRITE) 
 	syscall
 	jc	err
-	add rsp, 8 ; remove \n from stack
 
 	mov rax, 10
 	ret	
@@ -44,8 +43,8 @@ _ft_puts:
 null_case:
 	;--------- WRITE (null) --------;
 	mov		rdi, STDOUT	
-	mov		rsi, null.str 
-	mov		rdx, null.len
+	lea     rsi, [rel null.str]
+	lea     rdx, [rel null.len]
 	mov		rax, MACH_SYSCALL(SYS_WRITE) 
 	syscall
 

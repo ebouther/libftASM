@@ -34,8 +34,8 @@ _ft_putstr:
 null_case:
 	;--------- WRITE (null) --------;
 	mov		rdi, STDOUT	
-	mov		rsi, null.str 
-	mov		rdx, null.len
+	lea		rsi, [rel null.str]
+	lea		rdx, [rel null.len]
 	mov		rax, MACH_SYSCALL(SYS_WRITE) 
 	syscall
 
