@@ -9,9 +9,9 @@ _ft_isupper:
 is_upper:
 	cmp rdi, 'Z'
 	jg	not_upper	
-	mov	rax, 0 
+	mov	rax, 1 
 	ret
 
 not_upper:
-	mov	rax, -1
+	mov	rax, 0 
 	ret

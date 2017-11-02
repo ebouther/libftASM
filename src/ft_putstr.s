@@ -35,7 +35,7 @@ null_case:
 	;--------- WRITE (null) --------;
 	mov		rdi, STDOUT	
 	lea		rsi, [rel null.str]
-	lea		rdx, [rel null.len]
+	mov		rdx, null.len
 	mov		rax, MACH_SYSCALL(SYS_WRITE) 
 	syscall
 

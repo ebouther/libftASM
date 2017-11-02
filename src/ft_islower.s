@@ -9,9 +9,9 @@ _ft_islower:
 is_lower:
 	cmp rdi, 'z'
 	jg	not_lower	
-	mov	rax, 0 
+	mov	rax, 1 
 	ret
 
 not_lower:
-	mov	rax, -1
+	mov	rax, 0 
 	ret
